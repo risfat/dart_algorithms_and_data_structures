@@ -26,7 +26,7 @@ The following algorithms and problems are implemented in this project:
 1. Clone the repository:
    ```bash
    git clone https://github.com/risfat/dart_algorithms_and_data_structures.git
-   cd dart-algorithms
+   cd dart_algorithms_and_data_structures
    ```
 
 2. Run the `algorithms.dart` file:
