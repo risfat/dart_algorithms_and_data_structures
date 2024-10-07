@@ -113,3 +113,88 @@ List<int> merge(List<int> left, List<int> right) {
 
   return result;
 }
+
+// 7. Bubble Sort Algorithm
+List<int> bubbleSort(List<int> arr) {
+  int n = arr.length;
+  for(int i = 0; i <= n-1; i++){
+    for(int j = 0; j < n-i-1; j++){
+      if (arr[j] > arr[j+1]) {
+        int temp = arr[j+1];
+        arr[j+1] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+// 8. Binary Search Algorithm
+int binarySearch(List<int> arr, int target) {
+  int left = 0;
+  int right = arr.length - 1;
+
+  while (left <= right) {
+    int mid = (left + right) ~/ 2;
+    // int mid = left + (right - left) ~/ 2;
+
+    if (arr[mid] == target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return -1; // Target not found
+}
+
+// 9. Selection Sort Algorithm
+List<int> selectionSort(List<int> arr) {
+  int n = arr.length;
+  for(int i = 0; i <= n-1; i++){
+    int minIndex = i;
+    for(int j = i+1; j<n; j++){
+      if (arr[minIndex] > arr[j]) {
+        minIndex = j;
+      }  
+    }
+    if (minIndex != i) {
+      int temp = arr[minIndex];
+      arr[minIndex] = arr[i];
+      arr[i] = temp;
+    }
+  }
+
+  return arr;
+}
+
+
+// 11. Bubble Sort with Odd-Even Sorting
+List<int> bubbleSortOddEven(List<int> arr) {
+  int n = arr.length;
+  bool swapped;
+
+  do {
+    swapped = false;
+
+    for (int i = 1; i < n - 1; i += 2) {
+      if (arr[i] > arr[i + 1]) {
+        int temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swapped = true;
+      }
+    }
+
+    for (int i = 0; i < n - 2; i += 2) {
+      if (arr[i] > arr[i + 2]) {
+        int temp = arr[i];
+        arr[i] = arr[i + 2];
+        arr[i + 2] = temp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+  return arr;
+}
